@@ -37,10 +37,12 @@
 
         <mat-card-content fxLayout="column" fxLayoutAlign="center center">
           <div fxLayoutAlign="center">
+            
             <button mat-raised-button color="warn" class="edit-button"
-                    (click)="changeEditMode()">
+                    (click)="changeEditMode()"  >
               cancel
             </button>
+          
           </div>
 
           <!--name-->
@@ -108,8 +110,8 @@
     </ng-template>
 
     <ng-template #readonly>
-      <div fxLayoutAlign="center">
-        <button mat-raised-button color="primary" class="edit-button"
+      <div  fxLayoutAlign="center">
+        <button *ngIf="allowEditMode" mat-raised-button color="primary" class="edit-button"
                 (click)="changeEditMode()">
           edit
         </button>
@@ -145,7 +147,7 @@
       </mat-form-field>
 
       <mat-card-actions fxLayout="column">
-        <button *ngIf="canLogout" mat-button color="primary" (click)="signOut()">Sign out</button>
+        <button *ngIf="canLogout" mat-button color="primary" (click)="auth.auth.signOut()">Sign out</button>
         <button *ngIf="canDeleteAccount" mat-button color="warn" (click)="deleteAccount()">Delete account</button>
       </mat-card-actions>
 
