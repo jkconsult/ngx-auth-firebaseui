@@ -38,6 +38,10 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   guestEnabled = true;
 
   @Input()
+  regEnabled = false;
+
+
+  @Input()
   tosUrl: string;
 
   @Input()
